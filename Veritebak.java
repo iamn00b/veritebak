@@ -22,16 +22,23 @@ public class Veritebak {
 		for (String huruf : kataAcakList) {
 		  kataAcak += huruf;
 		}
+
 		return kataAcak;
-}
+	}
+
 	public static void main(String argv[]) throws Exception {
 
+		// Scanner dan inisiasi permainan
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		Veritebak game = new Veritebak(argv);
 
-		while (true) {
-			Random rng = new Random();
+		// randomizer
+		Random rng = new Random();
 
+		// Forever Loop
+		while (true) {
+
+			// ambil kata
 			game.current = game.dictionary[rng.nextInt(game.dictionary.length)];
 			System.out.println("Hints : " + game.acak(game.current));
 
